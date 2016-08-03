@@ -1,17 +1,17 @@
-# redis_record
+# Rediscord
 keep record id sync with dynamic redis set or zset
 
-## install
+## Install
 
-add `gem 'redis_record'` to Gemfile, and run `bundle install`
+add `gem 'rediscord'` to Gemfile, and run `bundle install`
 
-## Usage
+## Example
 * set
 ```ruby
 class Post < ApplicationRecord
   enum level: [ :one, :two, :there ]
 
-  include RedisRecord
+  include Rediscord
   redis_set key: ->(m){ "level_#{m.level}_post_set" }, redis: Redis.new
 end
 ```
@@ -31,7 +31,7 @@ Post.create(level: :there) # id: 4
 class Post < ApplicationRecord
   enum level: [ :one, :two, :there ]
 
-  include RedisRecord
+  include Rediscord
   redis_zset key: ->(m){ "level_#{m.level}_post_zset" }, score: ->(m){ m.updated_at.to_i }, redis: Redis.new
 end
 ```

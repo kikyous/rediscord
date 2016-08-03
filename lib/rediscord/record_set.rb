@@ -1,10 +1,10 @@
-module RedisRecord
+module Rediscord
   class RecordSet
     attr_reader :key, :redis, :force_update
 
     def initialize(options)
       @key = options[:key]
-      @redis = options[:redis] || REDIS
+      @redis = options[:redis]
     end
 
     def key_for(record)
@@ -21,7 +21,7 @@ module RedisRecord
 
     def after_update(record, prev_record)
       _key_was = key_for(prev_record)
-      _key = key_for(prev_record)
+      _key = key_for(record)
       if force_update || _key_was != _key
         redis.srem(_key_was, record.id)
         redis.sadd(_key, record.id)

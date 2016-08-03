@@ -1,8 +1,8 @@
 require 'active_support/concern'
-require 'redis_record/record_set'
-require 'redis_record/record_zset'
+require 'rediscord/record_set'
+require 'rediscord/record_zset'
 
-module RedisRecord
+module Rediscord
   extend ActiveSupport::Concern
   class_methods do
     attr_reader :force_update, :record_sets

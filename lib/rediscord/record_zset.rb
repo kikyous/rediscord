@@ -1,4 +1,4 @@
-module RedisRecord
+module Rediscord
   class RecordZset < RecordSet
     attr_reader :score
 
