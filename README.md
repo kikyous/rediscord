@@ -23,7 +23,7 @@ Post.create(level: :there) # id: 4
 ```
 > what's in redis?
 
-![](http://ww1.sinaimg.cn/large/006tKfTcjw1f6gc1feycqj31hc0vsdix.jpg)
+![](http://ww1.sinaimg.cn/large/006tKfTcjw1f6ixn9wi02j31kw10atd4.jpg)
 
 * zset
 
@@ -41,4 +41,4 @@ Post.create(level: :one)
 Post.create(level: :two)
 Post.create(level: :there)
 ```
-![](http://ww1.sinaimg.cn/large/006tKfTcjw1f6gc6mmk9sj31hc0vsgov.jpg)
+![](http://ww2.sinaimg.cn/large/006tKfTcjw1f6ixp5r14bj31kw10ajvt.jpg)
